@@ -30,32 +30,51 @@
           </div>
           <div class="left4">
             <total-gender
-              :data="genderData"
-            ></total-gender>
+              :data="genderData"></total-gender>
           </div>
           <div class="left5">
             <total-rider
-              :data="riderData"
-            ></total-rider>
+              :data="riderData"></total-rider>
           </div>
           <div class="left6">
             <hot-category
-              :data="hotCategoryData"
-            ></hot-category>
+              :data="hotCategoryData"></hot-category>
           </div>
         </div>
         <div class="right">
-          <div class="right-top1">888</div>
-          <div class="right-top2">999</div>
+          <div class="right-top1">
+            <center-header
+              :data="headerData"
+            >
+            </center-header>
+          </div>
+          <div class="right-top2">
+            <transform-category
+              :data="['ALL', '北京', '深圳', '上海', '杭州', '广州']"
+            >
+            </transform-category>
+          </div>
           <div class="right-bottom">
             <div class="right-left">
-              <div class="right-left1">111</div>
-              <div class="right-left2">111</div>
+              <div class="right-left1">
+                <!--<gdp-timeline-chart></gdp-timeline-chart>-->
+                <jiangsu-map-warning></jiangsu-map-warning>
+              </div>
+              <div class="right-left2">
+                <transform-category
+                  :data="['订单量', '销售额', '用户数', '退单量']"
+                  :color="['rgb(178, 209, 126)', 'rgb(116, 166, 49)']"
+                ></transform-category>
+              </div>
               <div class="right-left3">111</div>
               <div class="right-left4">111</div>
             </div>
             <div class="right-right">
-              <div class="right-right1"></div>
+              <div class="right-right1">
+                <sales-list
+                  :data="salesListData"
+                ></sales-list>
+              </div>
               <div class="right-right2"></div>
             </div>
           </div>
@@ -75,10 +94,26 @@ import TotalDevice from '../components/TotalDevice/index'
 import TotalGender from '../components/TotalGender/index'
 import TotalRider from '../components/TotalRider/index'
 import HotCategory from '../components/HotCategory/index'
+import CenterHeader from '../components/CenterHeader/index'
+import TransformCategory from '../components/TransformCategory/index'
+import SalesList from '../components/SalesList/index'
+import JiangsuMapWarning from '../components/JiangsuMapWarning/index'
 
 export default {
   name: 'Home',
-  components: { HotCategory, TotalRider, TotalGender, TotalDevice, TopHeader, TotalUser, AverageAge },
+  components: {
+    JiangsuMapWarning,
+    SalesList,
+    TransformCategory,
+    CenterHeader,
+    HotCategory,
+    TotalRider,
+    TotalGender,
+    TotalDevice,
+    TopHeader,
+    TotalUser,
+    AverageAge
+  },
   setup () {
     const loading = ref(true)
     onMounted(() => {
@@ -261,6 +296,7 @@ export default {
     }
   }
 }
+
 .loading-text {
   font-size: 20px;
   margin-top: 10px;

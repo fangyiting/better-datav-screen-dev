@@ -12,14 +12,13 @@
     <div id="hot-category-chart">
       <vue-echarts
         :options="options"
-      >
-      </vue-echarts>
+      ></vue-echarts>
     </div>
   </div>
 </template>
 
 <script>
-import { ref, watch, onMounted } from 'vue'
+import { watch, onMounted, ref } from 'vue'
 import { clock as useClock } from '../../hooks/useClock'
 
 export default {
@@ -123,7 +122,8 @@ export default {
     })
     return {
       time,
-      date
+      date,
+      options
     }
   }
 }

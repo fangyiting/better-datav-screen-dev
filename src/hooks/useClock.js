@@ -2,7 +2,7 @@ import { ref, onMounted, onUnmounted } from 'vue'
 
 function dateFilter (v) {
   const m = fillZero(v.getMonth() + 1) // 月份获取
-  const d = fillZero(v.getData()) // 日期获取
+  const d = fillZero(v.getDate()) // 日期获取
   return `${v.getFullYear()}-${m}-${d}`
 }
 
@@ -28,7 +28,7 @@ export function clock () {
       const now = new Date()
       date.value = dateFilter(now)
       time.value = timeFilter(now)
-    }, 5000)
+    }, 1000)
   }
 
   onMounted(start)
