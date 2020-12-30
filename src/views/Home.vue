@@ -57,8 +57,7 @@
           <div class="right-bottom">
             <div class="right-left">
               <div class="right-left1">
-                <!--<gdp-timeline-chart></gdp-timeline-chart>-->
-                <jiangsu-map-warning></jiangsu-map-warning>
+                <order-map></order-map>
               </div>
               <div class="right-left2">
                 <transform-category
@@ -66,8 +65,14 @@
                   :color="['rgb(178, 209, 126)', 'rgb(116, 166, 49)']"
                 ></transform-category>
               </div>
-              <div class="right-left3">111</div>
-              <div class="right-left4">111</div>
+              <div class="right-left3">
+                <better-fly-box starColor="rgb(251, 253, 142)">
+                  <real-time-order :data="realTimeOrderData"/>
+                </better-fly-box>
+              </div>
+              <div class="right-left4">
+                <schedule-view />
+              </div>
             </div>
             <div class="right-right">
               <div class="right-right1">
@@ -75,7 +80,9 @@
                   :data="salesListData"
                 ></sales-list>
               </div>
-              <div class="right-right2"></div>
+              <div class="right-right2">
+                <sales-rank :data="salesRankData"/>
+              </div>
             </div>
           </div>
         </div>
@@ -97,12 +104,18 @@ import HotCategory from '../components/HotCategory/index'
 import CenterHeader from '../components/CenterHeader/index'
 import TransformCategory from '../components/TransformCategory/index'
 import SalesList from '../components/SalesList/index'
-import JiangsuMapWarning from '../components/JiangsuMapWarning/index'
+import OrderMap from '../components/OrderMap/index'
+import RealTimeOrder from '../components/RealTimeOrder/index'
+import ScheduleView from '../components/ScheduleView/index'
+import SalesRank from '../components/SalesRank/index'
 
 export default {
   name: 'Home',
   components: {
-    JiangsuMapWarning,
+    SalesRank,
+    ScheduleView,
+    RealTimeOrder,
+    OrderMap,
     SalesList,
     TransformCategory,
     CenterHeader,
@@ -119,7 +132,7 @@ export default {
     onMounted(() => {
       setTimeout(() => {
         loading.value = false
-      }, 200)
+      }, 3500)
     })
     const screenData = useScreenData()
     return {

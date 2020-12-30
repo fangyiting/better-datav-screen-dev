@@ -54,8 +54,8 @@ export default {
     const headerData = ref([])
     const iconData = ref(['money', 'orders', 'biaoqing', 'me'])
     const update = () => {
-      project.value = [...props.data.project.value]
-      headerData.value = [...props.data.headerData.value]
+      project.value = [...props.data.project]
+      headerData.value = [...props.data.headerData]
     }
     onMounted(() => {
       update()

@@ -1,13 +1,12 @@
 <template>
-  <rotating-earth/>
+  <div>111</div>
 </template>
 
 <script>
-import RotatingEarth from '../components/RotatingEarth/index'
 
 export default {
-  components: { RotatingEarth }
 }
 </script>
 
-<style lang='scss' scoped></style>
+<style lang='scss' scoped>
+</style>

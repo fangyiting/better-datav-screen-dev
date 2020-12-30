@@ -2,13 +2,13 @@
   <div class="total-device">
     <div class="total-device-left">
       <div id="total-device-chart">
-        <vue-echarts :options="options"></vue-echarts>
+        <vue-echarts :options="options"/>
       </div>
     </div>
     <div class="total-device-right">
       <div class="title-wrapper">
         <div class="total-device-right-left">
-          <div class="title">深圳市外卖登录设备</div>
+          <div class="title">慕课外卖登录设备</div>
           <div class="sub-title">Distribution of Internet devices</div>
         </div>
         <div class="total-device-right-right">
@@ -32,7 +32,7 @@
             />
           </div>
           <div class="average-data-axis">
-            <div class="point" :style="{background: item.color}" />
+            <div class="point" :style="{background: item.color}"/>
             <div class="text">{{item.name}}</div>
           </div>
         </div>
@@ -59,14 +59,14 @@ export default {
     const updateChart = () => {
       options.value = {
         series: [{
-          name: '访问来源',
+          name: '设备总数',
           type: 'pie',
           data: refData.value,
           roseType: 'radius',
           label: { show: false },
           emphasis: {
             itemStyle: {
-              color: 'rgb(140, 251, 182)'
+              color: 'rgb(140,251,182)'
             }
           },
           radius: '70%',

@@ -15,7 +15,27 @@ export default {
     const update = () => {
       options.value = {
         globe: {
-          baseTexture: `${ROOT_PATH}assets/datav-gl-texture.jpg`
+          baseTexture: `${ROOT_PATH}assets/datav-gl-texture.jpg`, // 基础纹理贴图
+          heightTexture: `${ROOT_PATH}assets/datav-gl-texture.jpg`, // 高度纹理贴图
+          displacementScale: 0.05, // 地球顶点位置
+          environment: `${ROOT_PATH}assets/star-bg.jpg`, // 环境贴图
+          shading: 'realistic',
+          realisticMaterial: {
+            roughness: 0.9
+          },
+          postEffect: {
+            enable: true
+          },
+          light: {
+            main: {
+              integrity: 5,
+              shadow: true
+            },
+            ambient: {
+              integrity: 5
+            }
+          }
+
         }
       }
     }

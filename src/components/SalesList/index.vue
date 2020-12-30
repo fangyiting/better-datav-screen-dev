@@ -16,7 +16,6 @@ export default {
   setup (props) {
     const config = ref({})
     const update = () => {
-      console.log(props.data)
       const data = []
       const aligns = []
       const headerIndexData = []

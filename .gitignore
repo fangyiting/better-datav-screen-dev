@@ -4,7 +4,7 @@ node_modules
 .idea
 
 
-# local env files
+# local env filesRo
 .env.local
 .env.*.local
 
